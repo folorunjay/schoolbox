@@ -1,65 +1,49 @@
-import React, { useState } from "react";
+import BgIcons from "@/components/bg-with-icons";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from "@/shared/navbar";
+import imageHeader from "@/assets/image-intro.png";
+import Image from "rc-image";
 
 export default function LandingPage() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col items-center justify-center  text-foreground p-8">
-        {/* HERO CARD */}
-        <Card className="max-w-lg w-full text-center border border-border bg-card shadow-md">
-          <CardHeader>
-            <CardTitle className="text-3xl font-bold">Welcome to Our Landing Page</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-col items-center gap-6">
-            <p className="text-muted-foreground text-base">
-              Experience the simplicity of{" "}
-              <span className="text-primary font-semibold">shadcn/ui</span> — built for developers
-              who love clean design and powerful customization.
-            </p>
-
-            <div className="flex gap-4">
-              <Button size="lg" onClick={() => setCount((prev) => prev + 1)}>
-                Clicked {count} times
-              </Button>
-              <Button variant="outline" size="lg">
-                Learn More
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* FEATURE CARD */}
-        <div className="mt-12 grid sm:grid-cols-2 gap-6 w-full max-w-4xl">
-          <Card className="border border-border bg-card">
-            <CardHeader>
-              <CardTitle>Fast Setup</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm">
-                Get started quickly with minimal setup and intuitive UI components.
-              </p>
-              <Button className="mt-4">Start Now</Button>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-border bg-card">
-            <CardHeader>
-              <CardTitle>Customizable</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm">
-                Tailor your design system with shadcn tokens for full control over your theme.
-              </p>
-              <Button className="mt-4" variant="outline">
-                Explore Options
-              </Button>
-            </CardContent>
-          </Card>
+      <div className="relative w-full flex flex-col items-center justify-center text-center py-14 px-4 space-y-5">
+        <BgIcons /> {/* icons now contained to this div */}
+        <h3 className="text-lg md:text-3xl font-semibold text-foreground/90 tracking-wide uppercase ">
+          Become a Professional
+        </h3>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground">SOFTWARE ENGINEER</h2>
+        <p className="text-base md:text-lg font-medium text-foreground">
+          in just <span className="font-semibold text-foreground">4–6 months</span>
+        </p>
+        <p className="text-2xl md:text-base max-w-xl leading-relaxed mt-2">
+          Learn <span className="font-semibold text-foreground">Frontend</span>,{" "}
+          <span className="font-semibold text-foreground">Backend</span> and{" "}
+          <span className="font-semibold text-foreground">Fullstack Development</span> — from zero
+          to hero with real-world projects and mentorship.
+        </p>
+        <Button size="lg" className="mt-2 min-w-[18rem] text-lg">
+          Join the next batch
+        </Button>
+        <div className="relative w-full flex justify-center mt-6 md:mt-8">
+          <div
+            className="relative w-full max-w-lg"
+            style={{
+              backgroundImage:
+                'url(data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="8" height="8"%3e%3crect width="4" height="4" style="fill:#000000" /%3e%3c/svg%3e)',
+              backgroundRepeat: "repeat-y",
+              backgroundPosition: "left center",
+              paddingLeft: "8px",
+              paddingRight: "8px",
+            }}
+          >
+            <Image
+              src={imageHeader}
+              className="w-full object-contain rounded-xl shadow-xl"
+              alt="Hero illustration"
+            />
+          </div>
         </div>
       </div>
     </>
