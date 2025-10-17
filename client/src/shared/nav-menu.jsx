@@ -12,40 +12,52 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 
-const components = [
+import learnCourseImage from "../assets/illustration/learn-course.png";
+import helpingImage from "../assets/illustration/helping.png";
+import aboutUsImage from '../assets/illustration/about-us.png'
+
+const courses = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Frontend Development with React",
+    href: "/courses/frontend-react",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Learn to build modern, interactive user interfaces with React, including components, hooks, and state management.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description: "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Fullstack Web Development with the PERN stack",
+    href: "/courses/fullstack-pern",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Master full-stack development using PostgreSQL, Express, React, and Node.js to build complete web applications.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Backend REST API Development with Node JS",
+    href: "/courses/backend-nodejs",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Build scalable RESTful APIs using Node.js and Express, including authentication, database integration, and best practices.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "Database Management and Administration with SQL",
+    href: "/courses/database-sql",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Learn SQL fundamentals, database design, queries, and administration for effective data management.",
+  },
+  {
+    title: "Backend REST API Development with Django REST Framework",
+    href: "/courses/backend-django",
+    description:
+      "Develop powerful REST APIs using Django and Django REST Framework with Python's robust ecosystem.",
+  },
+  {
+    title: "Python Programming for Beginners",
+    href: "/courses/python-beginners",
+    description:
+      "Start your programming journey with Python, covering syntax, data structures, functions, and fundamental programming concepts.",
+  },
+  {
+    title: "Data Analysis with Python",
+    href: "/courses/data-analysis-python",
+    description:
+      "Analyze and visualize data using Python libraries like Pandas, NumPy, and Matplotlib for data-driven insights.",
   },
 ];
 
@@ -56,39 +68,10 @@ export function NavigationMenuDemo() {
     <NavigationMenu viewport={isMobile}>
       <NavigationMenuList className="flex-wrap  ">
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={'cursor-pointer'}>Home</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={"cursor-pointer"}>Courses</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
-                    to="/"
-                  >
-                    <div className="mb-2 text-lg font-medium sm:mt-4">shadcn/ui</div>
-                    <p className="text-muted-foreground text-sm leading-tight">
-                      Beautifully designed components built with Tailwind CSS.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem to="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem to="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem to="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className={'cursor-pointer'}>Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-0 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
+            <ul className="grid gap-0 sm:w-[500px] md:w-[600px] md:grid-cols-2 lg:w-[700px]">
+              {courses.map((component) => (
                 <ListItem key={component.title} title={component.title} href={component.href}>
                   {component.description}
                 </ListItem>
@@ -97,59 +80,98 @@ export function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <NavigationMenuTrigger className={"cursor-pointer"}>Program Types</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <div
+                  style={{
+                    backgroundImage: `url(${learnCourseImage})`,
+                    backgroundSize: "cover", // cover the whole element
+                    backgroundPosition: "center", // center the image
+                    display: "block", // ensure it has width/height
+                  }}
+                  className="size-full"
+                  asChild
+                ></div>
+              </li>
+              <ListItem to="/physical-class" title="Physical Class">
+                Attend in-person classes at designated locations with hands-on learning.
+              </ListItem>
+
+              <ListItem to="/virtual-class" title="Virtual Class">
+                Join online classes from anywhere with live sessions and interactive materials.
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem className="hidden md:block">
+          <NavigationMenuTrigger className={"cursor-pointer"}>Financial Aid</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 md:w-[300px] lg:w-[400px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <div
+                  style={{
+                    backgroundImage: `url(${helpingImage})`,
+                    backgroundSize: "cover", // cover the whole element
+                    backgroundPosition: "center", // center the image
+                    display: "block", // ensure it has width/height
+                    margin: "0 auto",
+                  }}
+                  className="size-[150px]"
+                  asChild
+                ></div>
+              </li>
+              <ListItem to="/physical-class" title="Student Loans">
+                Flexible loan options to fund your coding bootcamp education.
+              </ListItem>
+
+              <ListItem to="/virtual-class" title="Scholarships">
+                Merit-based and need-based scholarships for aspiring developers.
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="hidden md:block">
+          <NavigationMenuTrigger className={"cursor-pointer"}>About Us</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 md:w-[300px] lg:w-[400px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <div
+                  style={{
+                    backgroundImage: `url(${aboutUsImage})`,
+                    backgroundSize: "cover", // cover the whole element
+                    backgroundPosition: "center", // center the image
+                    display: "block", // ensure it has width/height
+                    margin: "0 auto",
+                  }}
+                  className="size-[150px] p-5"
+                  asChild
+                ></div>
+              </li>
+              <ListItem to="/about" title="About Us">
+                Learn about our mission, values, and commitment to tech education.
+              </ListItem>
+
+              <ListItem to="/careers" title="Careers">
+                Join our team and help shape the future of software development education.
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link to="/docs">Docs</Link>
+            <Link to="/docs">Job Portal</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
-        <NavigationMenuItem className="hidden    md:block">
-          <NavigationMenuTrigger className={'cursor-pointer'}>List</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[300px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Components</div>
-                    <div className="text-muted-foreground">
-                      Browse all components in the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Documentation</div>
-                    <div className="text-muted-foreground">Learn how to use the library.</div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Blog</div>
-                    <div className="text-muted-foreground">Read our latest blog posts.</div>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link to="/docs">Contact Us</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
-        <NavigationMenuItem className="hidden    md:block">
-          <NavigationMenuTrigger className={'cursor-pointer'}>Simple</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[200px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Components</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Documentation</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Blocks</Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="hidden    md:block">
-          <NavigationMenuTrigger className={'cursor-pointer'}>With Icon</NavigationMenuTrigger>
+        {/* <NavigationMenuItem className="hidden    md:block">
+          <NavigationMenuTrigger className={"cursor-pointer"}>With Icon</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
               <li>
@@ -174,7 +196,7 @@ export function NavigationMenuDemo() {
               </li>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );
@@ -183,10 +205,10 @@ export function NavigationMenuDemo() {
 function ListItem({ title, children, href, ...props }) {
   return (
     <li {...props}>
-      <NavigationMenuLink className={'p-4 py-2'} asChild>
+      <NavigationMenuLink className={"p-4 py-2"} asChild>
         <Link href={href}>
           <div className="text-sm leading-none font-medium">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">{children}</p>
+          <p className="text-muted-foreground line-clamp-2 text-xs leading-snug">{children}</p>
         </Link>
       </NavigationMenuLink>
     </li>
