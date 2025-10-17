@@ -9,7 +9,7 @@ export default function LandingPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground p-8">
+      <div className="min-h-screen flex flex-col items-center justify-center  text-foreground p-8">
         {/* HERO CARD */}
         <Card className="max-w-lg w-full text-center border border-border bg-card shadow-md">
           <CardHeader>

@@ -11,7 +11,7 @@ const Navbar = () => {
         <NavigationMenuDemo />
       </div>
       <div className="cursor-pointer">
-        <UserCircle2 />
+        <UserCircle2 size={30} />
       </div>
     </div>
   );

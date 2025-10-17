@@ -9,7 +9,7 @@ const Logo = () => {
         <Image className="w-7" src={logo} />
       </div>
       <p className="uppercase text-sm min-w-[100px] text-center leading-none font-semibold font-lato">
-        Anchorsoft{" "}
+        Anchorsoft
         <span className="tracking-[0.2rem] block pt-0.5 pl-0.5 text-primary font-[1000] text-base leading-none  text-center">
           Academy
         </span>
