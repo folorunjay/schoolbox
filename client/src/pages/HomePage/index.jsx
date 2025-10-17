@@ -26,23 +26,72 @@ export default function LandingPage() {
         <Button size="lg" className="mt-2 min-w-[18rem] text-lg">
           Join the next batch
         </Button>
-        <div className="relative w-full flex justify-center mt-6 md:mt-8">
-          <div
-            className="relative w-full max-w-lg"
-            style={{
-              backgroundImage:
-                'url(data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="8" height="8"%3e%3crect width="4" height="4" style="fill:#000000" /%3e%3c/svg%3e)',
-              backgroundRepeat: "repeat-y",
-              backgroundPosition: "left center",
-              paddingLeft: "8px",
-              paddingRight: "8px",
-            }}
-          >
-            <Image
-              src={imageHeader}
-              className="w-full object-contain rounded-xl shadow-xl"
-              alt="Hero illustration"
-            />
+        <div className="relative w-fit flex justify-center mt-6 md:mt-8 mx-auto">
+          {/* Left dots - top */}
+          <div className="absolute -left-2 md:-left-4 top-8 md:top-12 grid grid-cols-3 gap-1 md:gap-1.5">
+            {[...Array(24)].map((_, i) => (
+              <div
+                key={`left-top-${i}`}
+                className="w-1 h-1 md:w-1.5 md:h-1.5 bg-amber-300 rounded-sm"
+              />
+            ))}
+          </div>
+
+          {/* Left dots - bottom */}
+          <div className="absolute -left-6 md:-left-10 bottom-8 md:bottom-12 grid grid-cols-8 gap-1 md:gap-1.5">
+            {[...Array(24)].map((_, i) => (
+              <div
+                key={`left-bottom-${i}`}
+                className="w-1 h-1 md:w-1.5 md:h-1.5 bg-green-500 rounded-sm"
+              />
+            ))}
+          </div>
+
+          <Image
+            src={imageHeader}
+            className="w-full max-w-lg object-contain rounded-xl shadow-xl"
+            alt="Hero illustration"
+          />
+
+          {/* Green Badge Overlay */}
+          <div className="absolute -left-4 sm:-left-8 md:-left-16 lg:-left-20 bottom-16 sm:bottom-20 md:bottom-24 bg-green-700 text-white px-4 py-3 md:px-6 md:py-4 opacity-95 rounded-xl md:rounded-2xl shadow-2xl border-2 md:border-4 border-white max-w-[160px] sm:max-w-[180px] md:max-w-[200px]">
+            <div className="text-[10px] md:text-xs font-medium mb-1">We train</div>
+            <div className="text-base md:text-lg lg:text-xl font-bold mb-1 md:mb-2 leading-tight">
+              TOP NOTCH
+              <br />
+              ENGINEERS
+            </div>
+            <div className="flex gap-0.5 md:gap-1">
+              {[...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 fill-current text-amber-300"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              ))}
+            </div>
+          </div>
+
+          {/* Right dots - top (symmetrical to left-bottom) */}
+          <div className="absolute -right-6 md:-right-10 top-8 md:top-12 grid grid-cols-8 gap-1 md:gap-1.5">
+            {[...Array(24)].map((_, i) => (
+              <div
+                key={`right-top-${i}`}
+                className="w-1 h-1 md:w-1.5 md:h-1.5 bg-primary rounded-sm"
+              />
+            ))}
+          </div>
+
+          {/* Right dots - bottom (symmetrical to left-top) */}
+          <div className="absolute -right-2 md:-right-4 bottom-8 md:bottom-12 grid grid-cols-3 gap-1 md:gap-1.5">
+            {[...Array(24)].map((_, i) => (
+              <div
+                key={`right-bottom-${i}`}
+                className="w-1 h-1 md:w-1.5 md:h-1.5 bg-red-400 rounded-sm"
+              />
+            ))}
           </div>
         </div>
       </div>
