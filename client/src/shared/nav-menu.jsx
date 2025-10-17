@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 import learnCourseImage from "../assets/illustration/learn-course.png";
 import helpingImage from "../assets/illustration/helping.png";
-import aboutUsImage from '../assets/illustration/about-us.png'
+import aboutUsImage from "../assets/illustration/about-us.png";
 
 const courses = [
   {
@@ -71,8 +71,12 @@ export function NavigationMenuDemo() {
           <NavigationMenuTrigger className={"cursor-pointer"}>Courses</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-0 sm:w-[500px] md:w-[600px] md:grid-cols-2 lg:w-[700px]">
-              {courses.map((component) => (
-                <ListItem key={component.title} title={component.title} href={component.href}>
+              {courses.map((component, _key) => (
+                <ListItem
+                  key={component.title}
+                  title={`${_key + 1}. ${component.title}`}
+                  href={component.href}
+                >
                   {component.description}
                 </ListItem>
               ))}
@@ -82,7 +86,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger className={"cursor-pointer"}>Program Types</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-0 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <div
                   style={{
@@ -109,7 +113,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem className="hidden md:block">
           <NavigationMenuTrigger className={"cursor-pointer"}>Financial Aid</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[300px] lg:w-[400px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-0 md:w-[300px] lg:w-[400px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <div
                   style={{
@@ -136,7 +140,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem className="hidden md:block">
           <NavigationMenuTrigger className={"cursor-pointer"}>About Us</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[300px] lg:w-[400px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-0 md:w-[300px] lg:w-[400px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <div
                   style={{
@@ -176,19 +180,19 @@ export function NavigationMenuDemo() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="#" className="flex-row items-center gap-2">
+                  <Link href="#" className="flex-row items-center gap-0">
                     <CircleHelpIcon />
                     Backlog
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#" className="flex-row items-center gap-2">
+                  <Link href="#" className="flex-row items-center gap-0">
                     <CircleIcon />
                     To Do
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#" className="flex-row items-center gap-2">
+                  <Link href="#" className="flex-row items-center gap-0">
                     <CircleCheckIcon />
                     Done
                   </Link>
@@ -205,9 +209,9 @@ export function NavigationMenuDemo() {
 function ListItem({ title, children, href, ...props }) {
   return (
     <li {...props}>
-      <NavigationMenuLink className={"p-4 py-2"} asChild>
+      <NavigationMenuLink className={"p-4 py-2 h-full flex flex-col justify-center"} asChild>
         <Link href={href}>
-          <div className="text-sm leading-none font-medium">{title}</div>
+          <div className="text-sm leading-tight font-medium">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-xs leading-snug">{children}</p>
         </Link>
       </NavigationMenuLink>
