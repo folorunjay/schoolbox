@@ -48,7 +48,7 @@ const BgIcons = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden h-full w-full">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden bg-muted/20 h-full w-full">
       {/* Top row - evenly spaced */}
       <ReactOriginal
         size={iconSize}
@@ -56,7 +56,7 @@ const BgIcons = () => {
       />
       <GraphqlPlain
         size={iconSize}
-        className="absolute top-12 sm:top-14 md:top-16 lg:top-18 left-[22%] sm:left-[25%] opacity-20"
+        className="absolute top-12 sm:top-14 md:top-16 lg:top-18 left-[20%] sm:left-[22%] opacity-20"
       />
       <NodejsOriginal
         size={iconSize}
@@ -123,11 +123,11 @@ const BgIcons = () => {
       />
       <GitOriginal
         size={iconSize}
-        className="absolute bottom-10 sm:bottom-12 md:bottom-16 left-[30%] sm:left-[32%] opacity-20 animate-pulse"
+        className="absolute bottom-5 sm:bottom-8 md:bottom-14 left-[20%] sm:left-[23%] opacity-20 animate-pulse"
       />
-      <AngularOriginal
+      <KubernetesPlain
         size={iconSize}
-        className="absolute bottom-8 sm:bottom-10 md:bottom-14 right-[33%] sm:right-[35%] opacity-20"
+        className="absolute bottom-8 sm:bottom-10 md:bottom-10 right-[23%] sm:right-[25%] opacity-20"
       />
       <AmazonwebservicesOriginalWordmark
         size={iconSize}
