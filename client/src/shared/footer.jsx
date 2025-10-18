@@ -54,7 +54,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-secondary dark:bg-secondary/40 text-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-4 pt-8 space-y-4">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-4 pt-8 space-y-4">
         <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-8">
           <div className="space-y-4 flex-1 max-w-md">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">

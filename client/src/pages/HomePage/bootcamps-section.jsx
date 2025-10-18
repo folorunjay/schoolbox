@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
 import Image from "rc-image";
-import imageHeader from "@/assets/image-intro.png";
 import { Check, Clock, User, Coins } from "lucide-react";
+
+import webDevImage from "@/assets/web-development-bootcamp.png";
+import mobileDevImage from "@/assets/mobile-development-bootcamp.jpg";
+import dataScienceDevImage from "@/assets/python-for-beginners-thumbnail.png";
 
 export default function BootcampsSection() {
   const bootcamps = [
@@ -13,7 +16,7 @@ export default function BootcampsSection() {
       level: "Absolute Beginners",
       price: "₦300,000",
       gradient: "from-blue-400 to-blue-600",
-      image: "/frontend-react.png",
+      image: webDevImage,
       variant: "default",
       buttonText: "Enroll Now",
       virtualClass: "No",
@@ -27,7 +30,7 @@ export default function BootcampsSection() {
       discountPrice: "₦450,000",
       price: "₦500,000",
       gradient: "from-purple-400 to-purple-600",
-      image: "/pern-stack.png",
+      image: mobileDevImage,
       variant: "default",
       buttonText: "Enroll Now",
       virtualClass: "No",
@@ -40,8 +43,8 @@ export default function BootcampsSection() {
       level: "Absolute Beginners",
       price: "₦150,000",
       discountPrice: "₦120,000",
-      gradient: "from-green-400 to-green-600",
-      image: "/python-beginners.png",
+      gradient: "from-green-100 to-green-300",
+      image: dataScienceDevImage,
       variant: "default",
       buttonText: "Enroll Now",
       virtualClass: "No",
@@ -53,7 +56,7 @@ export default function BootcampsSection() {
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center text-center px-4 space-y-5 bg-background/10">
-      <div className="w-[80%] mx-auto">
+      <div className="w-[90%] mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Join Our Life-Changing Bootcamps
@@ -72,19 +75,19 @@ export default function BootcampsSection() {
           {bootcamps.map((bootcamp) => (
             <Card
               key={bootcamp.id}
-              className="bg-card rounded-xl pt-0 pb-2 overflow-hidden shadow-lg border border-border hover:shadow-xl transition-shadow flex flex-col"
+              className="bg-card rounded-xl py-0  overflow-hidden shadow-lg border border-border hover:shadow-xl transition-shadow flex flex-col"
             >
               <CardHeader
-                className={`p-0 h-32 md:h-40 bg-gradient-to-br ${bootcamp.gradient} overflow-hidden relative`}
+                className={`relative p-0   bg-gradient-to-br ${bootcamp.gradient} overflow-hidden aspect-[16/9]`}
               >
                 <Image
-                  src={imageHeader}
+                  src={bootcamp.image}
                   alt={bootcamp.title}
                   className="w-full h-full object-cover opacity-80"
                 />
               </CardHeader>
 
-              <CardContent className="p-4 space-y-3 flex-1 flex flex-col text-left">
+              <CardContent className=" space-y-3 flex-1 flex flex-col text-left">
                 <h3 className="text-lg font-bold leading-tight text-foreground">
                   {bootcamp.title}
                 </h3>
@@ -106,7 +109,9 @@ export default function BootcampsSection() {
                     <Coins className="w-4 h-4 text-yellow-500" />
                     {bootcamp.discountPrice ? (
                       <div className="flex items-baseline gap-2">
-                        <span className="text-muted-foreground line-through">{bootcamp.price}</span>
+                        <span className="text-destructive decoration-double line-through">
+                          {bootcamp.price}
+                        </span>
                         <span className="text-foreground font-semibold text-lg">
                           {bootcamp.discountPrice}
                         </span>
