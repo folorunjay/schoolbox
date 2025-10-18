@@ -41,7 +41,7 @@ const faqItems = [
 export function FAQSection() {
   return (
     <section className="w-full bg-muted/20 py-10 ">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl px-6 md:px-8">
         <div className="mb-8 text-center md:mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Frequently asked questions

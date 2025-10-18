@@ -50,7 +50,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section className=" px-4 py-10 bg-muted/20 ">
+    <section className=" px-6 md:px-8 py-10 bg-background/10 ">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-foreground mb-12">
           Get In Touch

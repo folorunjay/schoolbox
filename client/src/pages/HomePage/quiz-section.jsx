@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "rc-image";
 export default function QuizSection() {
   return (
-    <section className="relative w-full flex flex-col items-center justify-center text-center pt-5  px-4 space-y-5 bg-muted/20">
+    <section className="relative w-full flex flex-col items-center justify-center text-center py-5  px-6 space-y-5 bg-muted/20">
       <div className="w-[80%] mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 ">
           <div className="w-full md:w-1/2 flex justify-center">
