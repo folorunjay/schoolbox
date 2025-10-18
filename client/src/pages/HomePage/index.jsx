@@ -3,28 +3,30 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/shared/navbar";
 import imageHeader from "@/assets/image-intro.png";
 import Image from "rc-image";
+import { Globe } from "lucide-react";
+import BootcampsSection from "./bootCampsSection";
 
 export default function LandingPage() {
   return (
-    <>
+    <div>
       <Navbar />
       <div className="relative w-full flex flex-col items-center justify-center text-center py-14 px-4 space-y-5">
         <BgIcons /> {/* icons now contained to this div */}
-        <h3 className="text-lg md:text-3xl font-semibold text-foreground/90 tracking-wide uppercase ">
+        <h3 className="text-lg z-60 md:text-3xl font-semibold text-foreground/90 tracking-wide uppercase ">
           Become a Professional
         </h3>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground">SOFTWARE ENGINEER</h2>
-        <p className="text-base md:text-lg font-medium text-foreground">
-          in just <span className="font-semibold text-foreground">4–6 months</span>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-primary z-60">SOFTWARE ENGINEER</h2>
+        <p className=" z-60 text-base md:text-lg font-medium text-foreground">
+          in just <span className="font-semibold text-secondary-foreground">4–6 months</span>
         </p>
-        <p className="text-2xl md:text-base max-w-xl leading-relaxed mt-2">
+        <p className="text-2xl md:text-base max-w-xl leading-relaxed z-60 mt-2">
           Learn <span className="font-semibold text-foreground">Frontend</span>,{" "}
           <span className="font-semibold text-foreground">Backend</span> and{" "}
           <span className="font-semibold text-foreground">Fullstack Development</span> — from zero
           to hero with real-world projects and mentorship.
         </p>
-        <Button size="lg" className="mt-2 min-w-[18rem] text-lg">
-          Join the next batch
+        <Button size="lg" className="mt-2 min-w-[18rem] text-lg z-60">
+          Join the Bootcamp
         </Button>
         <div className="relative w-fit flex justify-center mt-6 md:mt-8 mx-auto">
           {/* Left dots - top */}
@@ -94,7 +96,15 @@ export default function LandingPage() {
             ))}
           </div>
         </div>
+        <div className="flex items-center gap-2 mt-3 text-foreground">
+          <Globe />
+          <p className="text-base md:text-lg font-semibold underline cursor-pointer ">
+            www.anchorsoftacademy.com
+          </p>
+        </div>
       </div>
-    </>
+      {/* Bootcamps Section */}
+      <BootcampsSection />
+    </div>
   );
 }
